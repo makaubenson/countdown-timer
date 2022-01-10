@@ -26,7 +26,7 @@ const giveaway = document.querySelector(".giveaway");
 const deadline = document.querySelector(".deadline");
 const items = document.querySelectorAll(".deadline-format h4"); //grab the h4 within the div with the class deadline-format
 // console.log(items);
-let futureDate = new Date(2022, 7, 19, 20, 30, 00);
+let futureDate = new Date(2022, 7, 9, 8, 0, 0);
 // console.log(futureDate);
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours();
@@ -38,7 +38,7 @@ const weekday = weekdays[futureDate.getDay()];
 // console.log(months[month]);
 month = months[month];
 
-giveaway.textContent = `giveaway ends on ${weekday}, ${date} ${month} ${year} at ${hours}${minutes}hours`;
+giveaway.textContent = `The 2022 elections in Kenya will take place on ${weekday}, ${date} ${month} ${year} starting at 0${hours}:0${minutes}am`;
 
 //future time in milliseconds
 const futureTime = futureDate.getTime();
@@ -92,5 +92,6 @@ function getRemainingTime() {
     deadline.innerHTML = `<h4>Sorry, this giveaway has expired!!</h4>`;
   }
 }
+//countdown
 let countdown = setInterval(getRemainingTime, 1000); //i would like to get remaining time every second
 getRemainingTime();
